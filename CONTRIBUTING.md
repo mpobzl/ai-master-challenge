@@ -1,16 +1,18 @@
 # Como submeter sua solução
 
-Existem duas formas de enviar sua submissão:
+A submissão é feita **exclusivamente via Pull Request**. Isso faz parte do teste — se você vai implementar IA em áreas inteiras, precisa saber trabalhar com git.
 
-## Opção 1 — Pull Request (preferida)
+## Passo a passo
 
 1. **Fork** este repositório
-2. Crie uma branch com seu nome: `git checkout -b submission/seu-nome`
-3. Crie uma pasta: `submissions/seu-nome/`
-4. Adicione sua solução e process log dentro da pasta
-5. Abra um **Pull Request** com título: `[Submission] Seu Nome — Challenge XXX`
+2. Clone o fork: `git clone https://github.com/SEU-USUARIO/ai-master-challenge.git`
+3. Crie uma branch: `git checkout -b submission/seu-nome`
+4. Crie sua pasta: `mkdir -p submissions/seu-nome`
+5. Adicione sua solução e process log dentro da pasta
+6. Commit e push: `git push origin submission/seu-nome`
+7. Abra um **Pull Request** para `main` com título: `[Submission] Seu Nome — Challenge XXX`
 
-### Estrutura da pasta
+## Estrutura da pasta
 
 ```
 submissions/seu-nome/
@@ -25,22 +27,24 @@ submissions/seu-nome/
 └── docs/                ← Documentação adicional (se houver)
 ```
 
-### Checklist antes de abrir o PR
+## Checklist antes de abrir o PR
 
 - [ ] Escolhi um challenge e li o README completo
 - [ ] Minha solução está na pasta `submissions/meu-nome/`
 - [ ] Incluí o process log com evidências de uso de IA
-- [ ] O README da minha submissão segue o template
+- [ ] O README da minha submissão segue o [template](./templates/submission-template.md)
 - [ ] Se construí código, incluí instruções de setup
 - [ ] Não modifiquei nenhum arquivo fora da minha pasta
 
-## Opção 2 — Email
+## Regras do PR
 
-Envie para **g4os@g4business.com** com:
+- Só modifique arquivos dentro de `submissions/seu-nome/` — PRs que alteram outros arquivos serão rejeitados
+- Um PR por pessoa. Se quiser atualizar, faça push na mesma branch
+- O título do PR deve seguir o formato: `[Submission] Nome — Challenge XXX`
 
-- **Assunto:** `[AI Master] Seu Nome — Challenge XXX`
-- **Corpo:** breve apresentação + link para LinkedIn
-- **Anexos ou links:** solução + process log (Google Drive, Notion, GitHub — o que preferir)
+## Nunca usou git?
+
+Se você está aprendendo agora, use IA para te ajudar. Sério — pedir pro Claude ou ChatGPT te guiar pelo processo de fork, branch e PR é exatamente o tipo de coisa que um AI Master faz. Isso já é parte do teste.
 
 ---
 

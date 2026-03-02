@@ -23,10 +23,12 @@ Não estamos testando se você sabe usar ChatGPT. Estamos testando se você cons
 
 ## Como funciona
 
-1. Escolha **um desafio** da pasta [`/challenges`](./challenges/)
-2. Leia o brief completo
-3. Resolva usando **qualquer ferramenta de IA** que quiser
-4. Envie sua solução seguindo o [Guia de Submissão](./submission-guide.md)
+1. **Fork** este repositório
+2. Escolha **um desafio** da pasta [`/challenges`](./challenges/)
+3. Leia o README completo do challenge
+4. Resolva usando **qualquer ferramenta de IA** que quiser
+5. Coloque sua solução em `submissions/seu-nome/`
+6. Abra um **Pull Request** — detalhes em [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ### Regras
 
@@ -80,12 +82,14 @@ Valorizamos **inteligência no uso do tempo**, não quantidade de horas.
 
 ## Submissão
 
-Duas opções:
+A submissão é feita **exclusivamente via Pull Request**. Isso faz parte do teste.
 
-- **Pull Request** (preferida) — fork o repo, crie `submissions/seu-nome/`, abra PR. Detalhes em [CONTRIBUTING.md](./CONTRIBUTING.md).
-- **Email** — envie para `g4os@g4business.com` com assunto `[AI Master] Seu Nome — Challenge XXX`
+1. Fork → branch `submission/seu-nome` → pasta `submissions/seu-nome/`
+2. Use o [template de submissão](./templates/submission-template.md) para estruturar sua entrega
+3. Abra o PR seguindo as instruções em [CONTRIBUTING.md](./CONTRIBUTING.md)
+4. Leia o [Guia de Submissão](./submission-guide.md) para detalhes sobre o que enviar
 
-Use o [template de submissão](./templates/submission-template.md) para estruturar sua entrega. Leia o [Guia de Submissão](./submission-guide.md) para detalhes sobre o que enviar.
+> Se você não sabe abrir um Pull Request, esse é um bom momento pra aprender. Um AI Master resolve esse tipo de problema em 10 minutos.
 
 ---
 
@@ -116,4 +120,4 @@ Estamos construindo o futuro do trabalho com IA — e precisamos de pessoas que 
 
 ---
 
-*Tem dúvidas? Abra uma [issue](../../issues) ou envie email para `g4os@g4business.com`.*
+*Tem dúvidas? Abra uma [issue](../../issues).*
