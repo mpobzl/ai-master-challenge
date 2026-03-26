@@ -18,7 +18,6 @@ Tenho especial interesse em aplicar IA para ganho de eficiência, automação e 
 
 ## Executive Summary
 
-_Em 3-5 frases: o que você fez, o que encontrou, e qual a principal recomendação._
 Desenvolvi um motor de priorização de leads baseado em dados históricos de vendas, com o objetivo de orientar a tomada de decisão comercial de forma objetiva e escalável.
 
 A solução combina taxa de conversão, valor do negócio e qualidade de preço para gerar um score explicável, utilizando fallback hierárquico para garantir robustez mesmo com baixa volumetria de dados.
@@ -31,7 +30,6 @@ Como principal recomendação, a empresa deve priorizar leads com maior score de
 
 ## Solução
 
-_Sua análise, protótipo, redesign ou o que o challenge pedir. Use o formato que melhor comunicar._
 A solução desenvolvida consiste em um motor de priorização de leads baseado em dados históricos de vendas, com foco em aplicação real no processo comercial.
 
 O pipeline foi estruturado em cinco etapas principais:
@@ -75,7 +73,6 @@ A solução foi desenhada para ser simples, robusta e diretamente utilizável pe
 
 ### Abordagem
 
-_Como você atacou o problema. Por onde começou? Como decompôs? O que priorizou?_
 A abordagem partiu de uma perspectiva de negócio: como transformar um processo hoje baseado em intuição em uma decisão orientada por dados.
 
 O primeiro passo foi entender o problema operacional — um pipeline com alto volume de oportunidades e baixa eficiência na priorização — e mapear quais variáveis realmente impactam o sucesso comercial (conversão, valor e qualidade de negociação).
@@ -102,7 +99,6 @@ Por fim, a solução foi estruturada como um produto, evoluindo da análise para
 
 ### Resultados / Findings
 
-_O que você encontrou/construiu. Mostre dados, screenshots, links._
 A análise gerou não apenas um modelo de priorização, mas também insights relevantes sobre a estrutura dos dados e o processo comercial.
 
 **1. Qualidade de dados como principal gargalo**  
@@ -147,19 +143,22 @@ A solução entrega um ranking claro e utilizável, permitindo:
 
 ### Recomendações
 
-_O que a empresa deveria fazer com base nos seus findings. Priorize._
-**1. Melhorar a qualidade dos dados (prioridade máxima)**  
+- Melhorar a qualidade dos dados (prioridade máxima)
 O principal limitador identificado foi o alto volume de dados incompletos,  que inviabiliza o a abordagem com o cliente. São 1425 leads que não terão destinação adequada. Isto gera um grande impacto em termos de faturamento perdido.
 Recomenda-se:
 - Padronizar o preenchimento de campos críticos (account, sales_price, stage)
-- Definir processo de enriquecimento de dados quando acontecem missing datas. 
+- Definir processo de enriquecimento de dados quando acontecem missing datas.
+- Priorizar leads com score alto (>0.8)
+- Criar SLA de preenchimento de CRM
+- Implementar validação obrigatória de campos críticos
+- Usar score como input para distribuição de leads
+- Monitorar taxa de conversão por vendedor
 
 
 ### Limitações
 
 ### Limitações
 
-_O que você não conseguiu resolver, verificar, ou que precisaria de mais tempo/dados._
 A principal limitação identificada foi a qualidade dos dados, com um volume significativo de leads incompletos que não puderam ser utilizados no modelo.
 
 Foram realizados testes para inferência e enriquecimento desses dados a partir de variáveis como produto, setor e região, porém não foram encontradas relações suficientemente robustas que permitissem imputação confiável. Dessa forma, optou-se por excluir esses registros para preservar a consistência do modelo.
@@ -172,7 +171,6 @@ A efetividade da solução está diretamente ligada à qualidade dos dados de en
 
 ## Process Log — Como usei IA
 
-> **Este bloco é obrigatório.** Sem ele, a submissão é desclassificada.
 >> Utilizei IA (ChatGPT) como ferramenta de apoio ao longo de todo o desenvolvimento, principalmente para acelerar a estruturação do código em Python, debugging e organização da solução.
 
 A IA foi utilizada nas seguintes etapas:
@@ -189,7 +187,7 @@ No entanto, todas as decisões críticas foram tomadas manualmente, incluindo:
 - Interpretação dos dados e identificação de insights  
 - Priorização de simplicidade e explicabilidade em vez de modelos complexos  
 
-A IA também apresentou limitações em alguns momentos, sugerindo abordagens excessivamente complexas (como modelos de machine learning avançados) ou soluções genéricas que não se aplicavam ao contexto do problema. Essas sugestões foram avaliadas e descartadas quando não agregavam valor prático.
+A IA também apresentou limitações em alguns momentos, sugerindo abordagens excessivamente complexas ou soluções genéricas que não se aplicavam ao contexto do problema. Essas sugestões foram avaliadas e descartadas quando não agregavam valor prático.
 
 Dessa forma, a IA foi utilizada como acelerador de execução, enquanto o raciocínio analítico, as decisões de negócio e a validação da solução foram conduzidos de forma independente.
 
@@ -206,7 +204,6 @@ Chat GPT, Python e Streamlit
 
 ### Workflow
 
-_Descreva passo a passo como você trabalhou. Onde a IA entrou em cada etapa?_
 1. **Entendimento do problema e definição da abordagem**  
    Iniciei analisando o contexto do challenge e o problema de negócio (priorização de leads).  
    Utilizei IA para estruturar possíveis abordagens, mas a definição final das métricas e estratégia foi conduzida manualmente.
@@ -220,7 +217,6 @@ _Descreva passo a passo como você trabalhou. Onde a IA entrou em cada etapa?_
    Identifiquei inconsistências (ex: valores "nan" como string) e separei dados completos e incompletos.  
    A IA auxiliou na implementação das rotinas de limpeza, mas as decisões sobre critérios de exclusão foram feitas com base em análise crítica.
 
-_A IA fez algo errado? Você percebeu? Como corrigiu?_
 4. **Definição de métricas e modelagem**  
    Desenvolvi as métricas principais (Win Rate, Ticket, Preço Alvo e Ciclo de Vendas) e construí o modelo de scoring.  
    A IA apoiou na codificação, mas a definição dos pesos e da lógica do modelo foi uma decisão de negócio.
@@ -244,7 +240,6 @@ _Qual foi seu julgamento, contexto, ou insight que fez diferença?_
 
 9. **Documentação e organização final**  
    Estruturei o README e a submissão, utilizando a IA para revisão e clareza na comunicação.
-
 ---
 
 ### O que eu adicionei que a IA sozinha não faria
