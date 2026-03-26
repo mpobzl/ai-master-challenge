@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 from model import run_engine
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+DATA_PATH = os.path.join(BASE_DIR, "data")
 
 st.set_page_config(page_title="AI Sales Prioritization Engine", layout="wide")
 
@@ -21,10 +25,10 @@ st.caption("Priorize leads com maior probabilidade de fechamento e retorno")
 # =========================
 # LOAD BASE COMPLETA
 # =========================
-sales = pd.read_csv("data/sales_pipeline.csv")
-accounts = pd.read_csv("data/accounts.csv")
-products = pd.read_csv("data/products.csv")
-teams = pd.read_csv("data/sales_teams.csv")
+sales = pd.read_csv(os.path.join(DATA_PATH, "sales_pipeline.csv"))
+accounts = pd.read_csv(os.path.join(DATA_PATH, "accounts.csv"))
+products = pd.read_csv(os.path.join(DATA_PATH, "products.csv"))
+teams = pd.read_csv(os.path.join(DATA_PATH, "sales_teams.csv"))
 
 df_full = sales.merge(accounts, on="account", how="left")
 df_full = df_full.merge(products, on="product", how="left")
