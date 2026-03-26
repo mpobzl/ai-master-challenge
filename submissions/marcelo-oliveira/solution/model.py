@@ -1,15 +1,19 @@
 import pandas as pd
 import numpy as np
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+DATA_PATH = os.path.join(BASE_DIR, "data")
 
 def run_engine():
 
     # =========================
     # LOAD + MERGE
     # =========================
-    sales = pd.read_csv("data/sales_pipeline.csv")
-    accounts = pd.read_csv("data/accounts.csv")
-    products = pd.read_csv("data/products.csv")
-    teams = pd.read_csv("data/sales_teams.csv")
+    sales = pd.read_csv(os.path.join(DATA_PATH, "sales_pipeline.csv"))
+    accounts = pd.read_csv(os.path.join(DATA_PATH, "accounts.csv"))
+    products = pd.read_csv(os.path.join(DATA_PATH, "products.csv"))
+    teams = pd.read_csv(os.path.join(DATA_PATH, "sales_teams.csv"))
 
     df = sales.merge(accounts, on="account", how="left")
     df = df.merge(products, on="product", how="left")
