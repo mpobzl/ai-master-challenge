@@ -12,3 +12,9 @@ Essas evidências demonstram:
 - Discussões sobre decisões técnicas
 
 Para mais detalhes, consulte também o README principal do projeto.
+
+https://github.com/user-attachments/files/26256643/Evidencias.de.uso.de.IA.docx
+
+
+
+
